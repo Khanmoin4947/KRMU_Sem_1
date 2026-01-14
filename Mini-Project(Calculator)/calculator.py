@@ -60,3 +60,6 @@ def main():
             operation = "/"
 
         print(f"\nResult: {num1} {operation} {num2} = {result}")
+
+
+main()
