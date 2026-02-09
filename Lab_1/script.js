@@ -1,29 +1,47 @@
-// Function to add a new task
-function addTask() {
-  // 1. Get the input box element
-  let inputBox = document.getElementById("taskInput");
+let events = [];
 
-  // 2. Get the text inside the input box
-  let taskText = inputBox.value;
+function addEvent(){
+    let title = document.getElementById("title").value;
+    let date = document.getElementById("date").value;
+    let category = document.getElementById("category").value;
+    let desc = document.getElementById("desc").value;
 
-  // 3. If the input is empty, do nothing
-  if (taskText === "") {
-    alert("Please enter a task!");
-    return;
-  }
+    if(title === "" || date === ""){
+        alert("Please fill title and date");
+        return;
+    }
 
-  // 4. Create a new list item <li>
-  let li = document.createElement("li");
-  li.textContent = taskText;
+    events.push({title, date, category, desc});
+    renderEvents();
 
-  // 5. Add a click event to remove the task when clicked
-  li.onclick = function() {
-    li.remove();
-  };
+    document.getElementById("title").value="";
+    document.getElementById("date").value="";
+    document.getElementById("desc").value="";
+}
 
-  // 6. Add the new <li> to the <ul>
-  document.getElementById("taskList").appendChild(li);
+function renderEvents(){
+    let list = document.getElementById("eventList");
+    list.innerHTML = "";
 
-  // 7. Clear the input box for the next task
-  inputBox.value = "";
+    events.forEach((e, index) => {
+        list.innerHTML += `
+        <div class="event-card">
+            <button class="delete" onclick="deleteEvent(${index})">×</button>
+            <h3>${e.title}</h3>
+            <div class="date">📅 ${e.date}</div>
+            <span class="badge">${e.category}</span>
+            <p>${e.desc}</p>
+        </div>
+        `;
+    });
+}
+
+function deleteEvent(index){
+    events.splice(index, 1);
+    renderEvents();
+}
+
+function clearEvents(){
+    events = [];
+    renderEvents();
 }
