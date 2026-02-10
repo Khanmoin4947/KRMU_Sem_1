@@ -45,3 +45,7 @@ function clearEvents(){
     events = [];
     renderEvents();
 }
+
+
+console.log("Event Dashboard Loaded");
+console.log(events);
