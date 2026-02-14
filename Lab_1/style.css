@@ -117,3 +117,7 @@ button:hover{
         width:100%;
     }
 }
+
+.watermark{
+    text-align: center;
+}
