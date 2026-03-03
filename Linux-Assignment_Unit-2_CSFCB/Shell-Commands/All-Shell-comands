@@ -1,0 +1,59 @@
+# 1. Display basic system information (built-in alternative to neofetch)
+uname -a
+
+# 2. Check Ubuntu version and release info
+lsb_release -a
+
+# 3. List files with details, sizes, permissions
+ls -lah
+
+# 4. Create a new directory
+mkdir new_folder
+
+# 5. Rename or move a file/directory
+mv oldname.txt newname.txt
+
+# 6. Copy a file to another location
+cp file.txt ~/backup/
+
+# 7. Delete a file or directory (use carefully)
+rm -r foldername
+
+# 8. Search for specific text inside files recursively
+grep -r "keyword" /path
+
+# 9. Show running processes (built-in system monitor)
+top
+
+# 10. Show all open listening ports and processes (built-in alternative to netstat)
+sudo ss -tulnp
+
+# 11. Display your machine's IP address
+hostname -I
+
+# 12. Update package lists and upgrade installed packages
+sudo apt update && sudo apt upgrade
+
+# 13. Show disk usage in human-readable format
+df -h
+
+# 14. Show size of each file/folder in the current directory
+du -sh *
+
+# 15. Create an empty file
+touch file.txt
+
+# 16. View the contents of a file with scrolling support
+less filename.txt
+
+# 17. Continuously view the last lines of a log file
+tail -f /var/log/syslog
+
+# 18. Install a software package
+sudo apt install package_name
+
+# 19. Find the full path of a command
+which python3
+
+# 20. Forcefully kill a process using its PID
+kill -9 <PID>
